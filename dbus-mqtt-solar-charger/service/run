@@ -1,0 +1,4 @@
+#!/bin/sh
+echo "*** starting dbus-mqtt-solar-charger ***"
+exec 2>&1
+exec /data/etc/dbus-mqtt-solar-charger/dbus-mqtt-solar-charger.py

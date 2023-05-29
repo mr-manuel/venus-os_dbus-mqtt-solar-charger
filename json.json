@@ -1,0 +1,78 @@
+{
+    "Pv": {
+        "V": 60
+    },
+    "Yield": {
+        "Power": 180,
+        "User": 30
+    },
+    "Dc": {
+        "0": {
+            "Current": 15,
+            "Voltage": 12
+        }
+    },
+    "State": 3,
+    "History": {
+        "Daily": {
+            "0": {
+                "Yield": 11,
+                "Consumption": 22,
+                "MaxPower": 33,
+                "MaxPvVoltage": 44,
+                "MinBatteryVoltage": 55,
+                "MaxBatteryVoltage": 66,
+                "MaxBatteryCurrent": 77,
+                "TimeInBulk": 3600,
+                "TimeInAbsorption": 1800,
+                "TimeInFloat": 900,
+                "LastError1": 1,
+                "LastError2": 2,
+                "LastError3": 3,
+                "LastError4": 4
+            },
+            "1": {
+                "Yield": 11,
+                "Consumption": 22,
+                "MaxPower": 33,
+                "MaxPvVoltage": 44,
+                "MinBatteryVoltage": 55,
+                "MaxBatteryVoltage": 66,
+                "MaxBatteryCurrent": 77,
+                "TimeInBulk": 3600,
+                "TimeInAbsorption": 1800,
+                "TimeInFloat": 900,
+                "LastError1": 1,
+                "LastError2": 2,
+                "LastError3": 3,
+                "LastError4": 4
+            },
+            "2": {
+                "Yield": 11,
+                "Consumption": 22,
+                "MaxPower": 33,
+                "MaxPvVoltage": 44,
+                "MinBatteryVoltage": 55,
+                "MaxBatteryVoltage": 66,
+                "MaxBatteryCurrent": 77,
+                "TimeInBulk": 3600,
+                "TimeInAbsorption": 1800,
+                "TimeInFloat": 900,
+                "LastError1": 1,
+                "LastError2": 2,
+                "LastError3": 3,
+                "LastError4": 4
+            }
+        },
+        "Overall": {
+            "DaysAvailable": 3,
+            "MaxPvVoltage": 44,
+            "MaxBatteryVoltage": 14,
+            "MinBatteryVoltage": 11,
+            "LastError1": 1,
+            "LastError2": 2,
+            "LastError3": 3,
+            "LastError4": 4
+        }
+    }
+}
