@@ -35,7 +35,7 @@ Single MTTP tracker
             "Current": 10.0,
             "Voltage": 12.0
         }
-    },
+    }
 }
 ```
 

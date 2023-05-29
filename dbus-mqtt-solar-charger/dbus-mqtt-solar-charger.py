@@ -146,7 +146,7 @@ solar_charger_dict = {
     "/Load/State": {"value": None, "textformat": _n},
     "/Load/I": {"value": None, "textformat": _a},
     "/ErrorCode": {"value": 0, "textformat": _n},
-    "/State": {"value": 252, "textformat": _n},
+    "/State": {"value": 0, "textformat": _n},
     "/Mode": {"value": None, "textformat": _n},
     "/MppOperationMode": {"value": None, "textformat": _n},
     "/DeviceOffReason": {"value": None, "textformat": _s},
@@ -289,7 +289,8 @@ def on_message(client, userdata, msg):
 
                 if (
                     (
-                        ("Pv" in jsonpayload and "V" in jsonpayload["Pv"])
+                        "Pv" in jsonpayload
+                        and "V" in jsonpayload["Pv"]
                         and "Yield" in jsonpayload
                         and "Power" in jsonpayload["Yield"]
                     )
@@ -343,14 +344,23 @@ def on_message(client, userdata, msg):
                         yield_power += jsonpayload["Pv"]["3"]["P"]
 
                     # calculate number of mppt trackers, if not set
-                    if "NrOfTrackers" not in jsonpayload:
+                    if "NrOfTrackers" not in jsonpayload and nr_of_trackers > 0:
                         solar_charger_dict["/NrOfTrackers"]["value"] = nr_of_trackers
+                    else:
+                        solar_charger_dict["/NrOfTrackers"]["value"] = 1
 
                     # calculate total power, if multiple trackers set, but total yield power not
                     if "Yield" not in jsonpayload or (
                         "Yield" in jsonpayload and "Power" not in jsonpayload["Yield"]
                     ):
                         solar_charger_dict["/Yield/Power"]["value"] = yield_power
+
+                    # set state, if not set
+                    if "State" not in jsonpayload:
+                        if solar_charger_dict["/Yield/Power"]["value"] > 0:
+                            solar_charger_dict["/State"]["value"] = 3
+                        else:
+                            solar_charger_dict["/State"]["value"] = 0
 
                 else:
                     logging.warning(
@@ -413,8 +423,8 @@ class DbusMqttSolarChargerService:
         self._dbusservice.add_path("/ProductId", 0xFFFF)
         self._dbusservice.add_path("/ProductName", productname)
         self._dbusservice.add_path("/CustomName", customname)
-        self._dbusservice.add_path("/FirmwareVersion", "1.0.0 (20230528)")
-        # self._dbusservice.add_path('/HardwareVersion', '')
+        self._dbusservice.add_path("/FirmwareVersion", 1)
+        self._dbusservice.add_path("/HardwareVersion", "1.0.0 (20230528)")
         self._dbusservice.add_path("/Connected", 1)
 
         self._dbusservice.add_path("/Latency", None)
@@ -464,7 +474,7 @@ class DbusMqttSolarChargerService:
                     )
 
             logging.info(
-                "Solar Charger: {:.2f} W %".format(
+                "Solar Charger: {:.2f} W".format(
                     solar_charger_dict["/Yield/Power"]["value"],
                 )
             )
