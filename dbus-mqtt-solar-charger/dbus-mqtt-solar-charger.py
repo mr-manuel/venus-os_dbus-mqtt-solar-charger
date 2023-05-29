@@ -78,7 +78,7 @@ else:
 if "DEFAULT" in config and "history_days" in config["DEFAULT"]:
     history_days = int(config["DEFAULT"]["history_days"])
 else:
-    history_days = 3
+    history_days = 0
 
 
 # set variables

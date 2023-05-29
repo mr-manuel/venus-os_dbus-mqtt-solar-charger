@@ -1,4 +1,4 @@
-# dbus-mqtt-solar-charger - Emulates a physical PV Inverter from MQTT data
+# dbus-mqtt-solar-charger - Emulates a physical Solar Charger from MQTT data
 
 <small>GitHub repository: [mr-manuel/venus-os_dbus-mqtt-solar-charger](https://github.com/mr-manuel/venus-os_dbus-mqtt-solar-charger)</small>
 
