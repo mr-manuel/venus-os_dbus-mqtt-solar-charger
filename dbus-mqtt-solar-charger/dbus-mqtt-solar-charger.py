@@ -155,7 +155,7 @@ solar_charger_dict = {
     "/Alarms/LowVoltage": {"value": None, "textformat": _n},
     "/Alarms/HighVoltage": {"value": None, "textformat": _n},
     # history
-    "/History/Overall/DaysAvailable": {"value": None, "textformat": _n},
+    "/History/Overall/DaysAvailable": {"value": history_days, "textformat": _n},
     "/History/Overall/MaxPvVoltage": {"value": None, "textformat": _n},
     "/History/Overall/MaxBatteryVoltage": {"value": None, "textformat": _n},
     "/History/Overall/MinBatteryVoltage": {"value": None, "textformat": _n},
@@ -168,7 +168,7 @@ solar_charger_dict = {
 
 # create history keys
 if history_days > 0:
-    for day in range(history_days - 1):
+    for day in range(history_days):
         solar_charger_dict.update(
             {
                 # history daily
@@ -214,6 +214,42 @@ if history_days > 0:
                 "/History/Daily/"
                 + str(day)
                 + "/LastError4": {"value": None, "textformat": _n},
+                "/History/Daily/"
+                + str(day)
+                + "/Pv/0/Yield": {"value": None, "textformat": _kwh},
+                "/History/Daily/"
+                + str(day)
+                + "/Pv/0/MaxPower": {"value": None, "textformat": _w},
+                "/History/Daily/"
+                + str(day)
+                + "/Pv/0/MaxVoltage": {"value": None, "textformat": _v},
+                "/History/Daily/"
+                + str(day)
+                + "/Pv/1/Yield": {"value": None, "textformat": _kwh},
+                "/History/Daily/"
+                + str(day)
+                + "/Pv/1/MaxPower": {"value": None, "textformat": _w},
+                "/History/Daily/"
+                + str(day)
+                + "/Pv/1/MaxVoltage": {"value": None, "textformat": _v},
+                "/History/Daily/"
+                + str(day)
+                + "/Pv/2/Yield": {"value": None, "textformat": _kwh},
+                "/History/Daily/"
+                + str(day)
+                + "/Pv/2/MaxPower": {"value": None, "textformat": _w},
+                "/History/Daily/"
+                + str(day)
+                + "/Pv/2/MaxVoltage": {"value": None, "textformat": _v},
+                "/History/Daily/"
+                + str(day)
+                + "/Pv/3/Yield": {"value": None, "textformat": _kwh},
+                "/History/Daily/"
+                + str(day)
+                + "/Pv/3/MaxPower": {"value": None, "textformat": _w},
+                "/History/Daily/"
+                + str(day)
+                + "/Pv/3/MaxVoltage": {"value": None, "textformat": _v},
             }
         )
 
