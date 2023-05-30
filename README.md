@@ -178,78 +178,78 @@ See [dbus](https://github.com/victronenergy/venus/wiki/dbus#solar-chargers) docu
                 }
             },
             "1": {                               --> String - Yesterday
-                "Yield": 11,
-                "Consumption": 22,
-                "MaxPower": 33,
-                "MaxPvVoltage": 44,
-                "MinBatteryVoltage": 55,
-                "MaxBatteryVoltage": 66,
-                "MaxBatteryCurrent": 77,
-                "TimeInBulk": 3600,
-                "TimeInAbsorption": 1800,
-                "TimeInFloat": 900,
-                "LastError1": 1,
-                "LastError2": 2,
-                "LastError3": 3,
-                "LastError4": 4,
+                "Yield": 11,                     --> Float - kWh of yesterday
+                "Consumption": 22,               --> Int - kWh of yesterday
+                "MaxPower": 33,                  --> Float - Watt peak of yesterday
+                "MaxPvVoltage": 44,              --> Float - Volt peak of yesterday
+                "MinBatteryVoltage": 55,         --> Float - Min battery voltage of yesterday
+                "MaxBatteryVoltage": 66,         --> Float - Max battery voltage of yesterday
+                "MaxBatteryCurrent": 77,         --> Float - Max battery current of yesterday
+                "TimeInBulk": 3600,              --> Int - Seconds in bulk mode of yesterday
+                "TimeInAbsorption": 1800,        --> Int - Seconds in absorption mode of yesterday
+                "TimeInFloat": 900,              --> Int - Seconds in float mode of yesterday
+                "LastError1": 1,                 --> Int - Last error of yesterday - See dbus documentation /ErrorCode
+                "LastError2": 2,                 --> Int - Second last error of yesterday - See dbus documentation /ErrorCode
+                "LastError3": 3,                 --> Int - Thrid last error of yesterday - See dbus documentation /ErrorCode
+                "LastError4": 4,                 --> Int - Fourth last error of yesterday - See dbus documentation /ErrorCode
                 "Pv": {
-                    "0": {
-                        "Yield": 1,
-                        "MaxPower": 11,
-                        "MaxPvVoltage": 111
+                    "0": {                       --> MPPT tracker number 1
+                        "Yield": 1,              --> Float - kWh of yesterday for MPPT tracker 1
+                        "MaxPower": 11,          --> Float - Watt peak of yesterday for MPPT tracker 1
+                        "MaxPvVoltage": 111      --> Float - Volt peak of yesterday for MPPT tracker 1
                     },
-                    "1": {
-                        "Yield": 2,
-                        "MaxPower": 22,
-                        "MaxPvVoltage": 222
+                    "1": {                       --> MPPT tracker number 2
+                        "Yield": 2,              --> Float - kWh of yesterday for MPPT tracker 2
+                        "MaxPower": 22,          --> Float - Watt peak of yesterday for MPPT tracker 2
+                        "MaxPvVoltage": 222      --> Float - Volt peak of yesterday for MPPT tracker 2
                     },
-                    "2": {
-                        "Yield": 3,
-                        "MaxPower": 33,
-                        "MaxPvVoltage": 333
+                    "2": {                       --> MPPT tracker number 3
+                        "Yield": 3,              --> Float - kWh of yesterday for MPPT tracker 3
+                        "MaxPower": 33,          --> Float - Watt peak of yesterday for MPPT tracker 3
+                        "MaxPvVoltage": 333      --> Float - Volt peak of yesterday for MPPT tracker 3
                     },
-                    "3": {
-                        "Yield": 4,
-                        "MaxPower": 44,
-                        "MaxPvVoltage": 444
+                    "3": {                       --> MPPT tracker number 4
+                        "Yield": 4,              --> Float - kWh of yesterday for MPPT tracker 4
+                        "MaxPower": 44,          --> Float - Watt peak of yesterday for MPPT tracker 4
+                        "MaxPvVoltage": 444      --> Float - Volt peak of yesterday for MPPT tracker 4
                     }
                 }
             },
             "2": {                               --> String - 2 days ago
-                "Yield": 11,
-                "Consumption": 22,
-                "MaxPower": 33,
-                "MaxPvVoltage": 44,
-                "MinBatteryVoltage": 55,
-                "MaxBatteryVoltage": 66,
-                "MaxBatteryCurrent": 77,
-                "TimeInBulk": 3600,
-                "TimeInAbsorption": 1800,
-                "TimeInFloat": 900,
-                "LastError1": 1,
-                "LastError2": 2,
-                "LastError3": 3,
-                "LastError4": 4,
+                "Yield": 11,                     --> Float - kWh of 2 days ago
+                "Consumption": 22,               --> Int - kWh of 2 days ago
+                "MaxPower": 33,                  --> Float - Watt peak of 2 days ago
+                "MaxPvVoltage": 44,              --> Float - Volt peak of 2 days ago
+                "MinBatteryVoltage": 55,         --> Float - Min battery voltage of 2 days ago
+                "MaxBatteryVoltage": 66,         --> Float - Max battery voltage of 2 days ago
+                "MaxBatteryCurrent": 77,         --> Float - Max battery current of 2 days ago
+                "TimeInBulk": 3600,              --> Int - Seconds in bulk mode of 2 days ago
+                "TimeInAbsorption": 1800,        --> Int - Seconds in absorption mode of 2 days ago
+                "TimeInFloat": 900,              --> Int - Seconds in float mode of 2 days ago
+                "LastError1": 1,                 --> Int - Last error of 2 days ago - See dbus documentation /ErrorCode
+                "LastError2": 2,                 --> Int - Second last error of 2 days ago - See dbus documentation /ErrorCode
+                "LastError3": 3,                 --> Int - Thrid last error of 2 days ago - See dbus documentation /ErrorCode
+                "LastError4": 4,                 --> Int - Fourth last error of 2 days ago - See dbus documentation /ErrorCode
                 "Pv": {
-                    "0": {
-                        "Yield": 1,
-                        "MaxPower": 11,
-                        "MaxPvVoltage": 111
+                    "0": {                       --> MPPT tracker number 1
+                        "Yield": 1,              --> Float - kWh of 2 days ago for MPPT tracker 1
+                        "MaxPower": 11,          --> Float - Watt peak of 2 days ago for MPPT tracker 1
+                        "MaxPvVoltage": 111      --> Float - Volt peak of 2 days ago for MPPT tracker 1
                     },
-                    "1": {
-                        "Yield": 2,
-                        "MaxPower": 22,
-                        "MaxPvVoltage": 222
+                    "1": {                       --> MPPT tracker number 2
+                        "Yield": 2,              --> Float - kWh of 2 days ago for MPPT tracker 2
+                        "MaxPower": 22,          --> Float - Watt peak of 2 days ago for MPPT tracker 2
+                        "MaxPvVoltage": 222      --> Float - Volt peak of 2 days ago for MPPT tracker 2
                     },
-                    "2": {
-                        "Yield": 3,
-                        "MaxPower": 33,
-                        "MaxPvVoltage": 333
+                    "2": {                       --> MPPT tracker number 3
+                        "Yield": 3,              --> Float - kWh of 2 days ago for MPPT tracker 3
+                        "MaxPower": 33,          --> Float - Watt peak of 2 days ago for MPPT tracker 3
+                        "MaxPvVoltage": 333      --> Float - Volt peak of 2 days ago for MPPT tracker 3
                     },
-                    "3": {
-                        "Yield": 4,
-                        "MaxPower": 44,
-                        "MaxPvVoltage": 444
+                    "3": {                       --> MPPT tracker number 4
+                        "Yield": 4,              --> Float - kWh of 2 days ago for MPPT tracker 4
+                        "MaxPower": 44,          --> Float - Watt peak of 2 days ago for MPPT tracker 4
+                        "MaxPvVoltage": 444      --> Float - Volt peak of 2 days ago for MPPT tracker 4
                     }
                 }
             }
