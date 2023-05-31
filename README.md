@@ -158,22 +158,22 @@ See [dbus](https://github.com/victronenergy/venus/wiki/dbus#solar-chargers) docu
                     "0": {                       --> MPPT tracker number 1
                         "Yield": 1,              --> Float - kWh of today for MPPT tracker 1
                         "MaxPower": 11,          --> Float - Watt peak of today for MPPT tracker 1
-                        "MaxPvVoltage": 111      --> Float - Volt peak of today for MPPT tracker 1
+                        "MaxVoltage": 111        --> Float - Volt peak of today for MPPT tracker 1
                     },
                     "1": {                       --> MPPT tracker number 2
                         "Yield": 2,              --> Float - kWh of today for MPPT tracker 2
                         "MaxPower": 22,          --> Float - Watt peak of today for MPPT tracker 2
-                        "MaxPvVoltage": 222      --> Float - Volt peak of today for MPPT tracker 2
+                        "MaxVoltage": 222        --> Float - Volt peak of today for MPPT tracker 2
                     },
                     "2": {                       --> MPPT tracker number 3
                         "Yield": 3,              --> Float - kWh of today for MPPT tracker 3
                         "MaxPower": 33,          --> Float - Watt peak of today for MPPT tracker 3
-                        "MaxPvVoltage": 333      --> Float - Volt peak of today for MPPT tracker 3
+                        "MaxVoltage": 333        --> Float - Volt peak of today for MPPT tracker 3
                     },
                     "3": {                       --> MPPT tracker number 4
                         "Yield": 4,              --> Float - kWh of today for MPPT tracker 4
                         "MaxPower": 44,          --> Float - Watt peak of today for MPPT tracker 4
-                        "MaxPvVoltage": 444      --> Float - Volt peak of today for MPPT tracker 4
+                        "MaxVoltage": 444        --> Float - Volt peak of today for MPPT tracker 4
                     }
                 }
             },
@@ -196,22 +196,22 @@ See [dbus](https://github.com/victronenergy/venus/wiki/dbus#solar-chargers) docu
                     "0": {                       --> MPPT tracker number 1
                         "Yield": 1,              --> Float - kWh of yesterday for MPPT tracker 1
                         "MaxPower": 11,          --> Float - Watt peak of yesterday for MPPT tracker 1
-                        "MaxPvVoltage": 111      --> Float - Volt peak of yesterday for MPPT tracker 1
+                        "MaxVoltage": 111        --> Float - Volt peak of yesterday for MPPT tracker 1
                     },
                     "1": {                       --> MPPT tracker number 2
                         "Yield": 2,              --> Float - kWh of yesterday for MPPT tracker 2
                         "MaxPower": 22,          --> Float - Watt peak of yesterday for MPPT tracker 2
-                        "MaxPvVoltage": 222      --> Float - Volt peak of yesterday for MPPT tracker 2
+                        "MaxVoltage": 222        --> Float - Volt peak of yesterday for MPPT tracker 2
                     },
                     "2": {                       --> MPPT tracker number 3
                         "Yield": 3,              --> Float - kWh of yesterday for MPPT tracker 3
                         "MaxPower": 33,          --> Float - Watt peak of yesterday for MPPT tracker 3
-                        "MaxPvVoltage": 333      --> Float - Volt peak of yesterday for MPPT tracker 3
+                        "MaxVoltage": 333        --> Float - Volt peak of yesterday for MPPT tracker 3
                     },
                     "3": {                       --> MPPT tracker number 4
                         "Yield": 4,              --> Float - kWh of yesterday for MPPT tracker 4
                         "MaxPower": 44,          --> Float - Watt peak of yesterday for MPPT tracker 4
-                        "MaxPvVoltage": 444      --> Float - Volt peak of yesterday for MPPT tracker 4
+                        "MaxVoltage": 444        --> Float - Volt peak of yesterday for MPPT tracker 4
                     }
                 }
             },
@@ -234,22 +234,22 @@ See [dbus](https://github.com/victronenergy/venus/wiki/dbus#solar-chargers) docu
                     "0": {                       --> MPPT tracker number 1
                         "Yield": 1,              --> Float - kWh of 2 days ago for MPPT tracker 1
                         "MaxPower": 11,          --> Float - Watt peak of 2 days ago for MPPT tracker 1
-                        "MaxPvVoltage": 111      --> Float - Volt peak of 2 days ago for MPPT tracker 1
+                        "MaxVoltage": 111        --> Float - Volt peak of 2 days ago for MPPT tracker 1
                     },
                     "1": {                       --> MPPT tracker number 2
                         "Yield": 2,              --> Float - kWh of 2 days ago for MPPT tracker 2
                         "MaxPower": 22,          --> Float - Watt peak of 2 days ago for MPPT tracker 2
-                        "MaxPvVoltage": 222      --> Float - Volt peak of 2 days ago for MPPT tracker 2
+                        "MaxVoltage": 222        --> Float - Volt peak of 2 days ago for MPPT tracker 2
                     },
                     "2": {                       --> MPPT tracker number 3
                         "Yield": 3,              --> Float - kWh of 2 days ago for MPPT tracker 3
                         "MaxPower": 33,          --> Float - Watt peak of 2 days ago for MPPT tracker 3
-                        "MaxPvVoltage": 333      --> Float - Volt peak of 2 days ago for MPPT tracker 3
+                        "MaxVoltage": 333        --> Float - Volt peak of 2 days ago for MPPT tracker 3
                     },
                     "3": {                       --> MPPT tracker number 4
                         "Yield": 4,              --> Float - kWh of 2 days ago for MPPT tracker 4
                         "MaxPower": 44,          --> Float - Watt peak of 2 days ago for MPPT tracker 4
-                        "MaxPvVoltage": 444      --> Float - Volt peak of 2 days ago for MPPT tracker 4
+                        "MaxVoltage": 444        --> Float - Volt peak of 2 days ago for MPPT tracker 4
                     }
                 }
             }
