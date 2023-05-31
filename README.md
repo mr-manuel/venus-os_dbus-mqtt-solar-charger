@@ -78,7 +78,6 @@ See [dbus](https://github.com/victronenergy/venus/wiki/dbus#solar-chargers) docu
 
 ```json
 {
-    "NrOfTrackers": 4,                           --> Int - Number of MPPT trackers, calculated if not set
     "Pv": {
         "0": {
             "V": 60.0,                           --> Float - Voltage of 1. MPPT tracker
@@ -117,7 +116,7 @@ See [dbus](https://github.com/victronenergy/venus/wiki/dbus#solar-chargers) docu
         "TemperatureSense": 20.0,                --> See dbus documentation
         "TemperatureSenseActive": 0,             --> See dbus documentation
         "VoltageSense": 80.0,                    --> See dbus documentation
-        "VoltageSenseActive": 0,                 --> See dbus documentation
+        "VoltageSenseActive": 0                  --> See dbus documentation
     },
     "Settings": {
         "BmsPresent": 0,                         --> See dbus documentation
@@ -215,7 +214,7 @@ See [dbus](https://github.com/victronenergy/venus/wiki/dbus#solar-chargers) docu
                     }
                 }
             },
-            "2": {                               --> String - 2 days ago
+            "2": {                               --> String - 2 days ago (I do not recommend more than 30 days)
                 "Yield": 11,                     --> Float - kWh of 2 days ago
                 "Consumption": 22,               --> Int - kWh of 2 days ago
                 "MaxPower": 33,                  --> Float - Watt peak of 2 days ago
@@ -324,6 +323,29 @@ It was tested on Venus OS Large `v2.92` on the following devices:
 
 * RaspberryPi 4b
 * MultiPlus II (GX Version)
+
+
+### Screenshots
+
+<details><summary>MQTT Solar Charger</summary>
+
+![MQTT Solar Charger - pages](/screenshots/solar-charger_pages.png)
+![MQTT Solar Charger - device list](/screenshots/solar-charger_device_list.png)
+![MQTT Solar Charger - device list - mqtt solar-charger](/screenshots/solar-charger_device_list_mqtt-solar-charger_1.png)
+![MQTT Solar Charger - device list - mqtt solar-charger](/screenshots/solar-charger_device_list_mqtt-solar-charger_2.png)
+![MQTT Solar Charger - device list - mqtt solar-charger](/screenshots/solar-charger_device_list_mqtt-solar-charger_3.png)
+![MQTT Solar Charger - device list - mqtt solar-charger](/screenshots/solar-charger_device_list_mqtt-solar-charger_4.png)
+![MQTT Solar Charger - device list - mqtt solar-charger](/screenshots/solar-charger_device_list_mqtt-solar-charger_5.png)
+![MQTT Solar Charger - device list - mqtt solar-charger](/screenshots/solar-charger_device_list_mqtt-solar-charger_6.png)
+![MQTT Solar Charger - device list - mqtt solar-charger](/screenshots/solar-charger_device_list_mqtt-solar-charger_7.png)
+![MQTT Solar Charger - device list - mqtt solar-charger](/screenshots/solar-charger_device_list_mqtt-solar-charger_8.png)
+![MQTT Solar Charger - device list - mqtt solar-charger](/screenshots/solar-charger_device_list_mqtt-solar-charger_9.png)
+![MQTT Solar Charger - device list - mqtt solar-charger](/screenshots/solar-charger_device_list_mqtt-solar-charger_10.png)
+![MQTT Solar Charger - device list - mqtt solar-charger](/screenshots/solar-charger_device_list_mqtt-solar-charger_11.png)
+![MQTT Solar Charger - device list - mqtt solar-charger](/screenshots/solar-charger_device_list_mqtt-solar-charger_12.png)
+![MQTT Solar Charger - device list - mqtt solar-charger](/screenshots/solar-charger_device_list_mqtt-solar-charger_13.png)
+
+</details>
 
 
 ## Supporting/Sponsoring this project
