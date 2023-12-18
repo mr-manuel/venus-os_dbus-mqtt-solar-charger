@@ -7,6 +7,13 @@
 I wrote this script for myself. I'm not responsible, if you damage something using my script.
 
 
+## Supporting/Sponsoring this project
+
+You like the project and you want to support me?
+
+[<img src="https://github.md0.eu/uploads/donate-button.svg" height="50">](https://www.paypal.com/donate/?hosted_button_id=3NEVZBDM5KABW)
+
+
 ### Purpose
 
 The script emulates a Solar Charger in Venus OS. It gets the MQTT data from a subscribed topic and publishes the information on the dbus as the service `com.victronenergy.solarcharger.mqtt_solar_charger` with the VRM instance `51`.
@@ -346,10 +353,3 @@ It was tested on Venus OS Large `v2.92` on the following devices:
 ![MQTT Solar Charger - device list - mqtt solar-charger](/screenshots/solar-charger_device_list_mqtt-solar-charger_13.png)
 
 </details>
-
-
-## Supporting/Sponsoring this project
-
-You like the project and you want to support me?
-
-[<img src="https://github.md0.eu/uploads/donate-button.svg" height="50">](https://www.paypal.com/donate/?hosted_button_id=3NEVZBDM5KABW)
