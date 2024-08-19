@@ -13,7 +13,8 @@ import _thread
 
 # import Victron Energy packages
 sys.path.insert(1, os.path.join(os.path.dirname(__file__), "ext", "velib_python"))
-from vedbus import VeDbusService
+from vedbus import VeDbusService  # noqa: E402
+from ve_utils import get_vrm_portal_id  # noqa: E402
 
 
 # get values from config.ini file
@@ -460,7 +461,7 @@ class DbusMqttSolarChargerService:
         self._dbusservice.add_path("/ProductName", productname)
         self._dbusservice.add_path("/CustomName", customname)
         self._dbusservice.add_path("/FirmwareVersion", 399)
-        self._dbusservice.add_path("/HardwareVersion", "1.0.2 (20240702)")
+        self._dbusservice.add_path("/HardwareVersion", "1.0.3 (20240819)")
         self._dbusservice.add_path("/Connected", 1)
 
         self._dbusservice.add_path("/Latency", None)
@@ -552,7 +553,10 @@ def main():
 
     # MQTT setup
     client = mqtt.Client(
-        "MqttSolarCharger_" + str(config["DEFAULT"]["device_instance"])
+        "MqttSolarCharger_"
+        + get_vrm_portal_id()
+        + "_"
+        + str(config["DEFAULT"]["device_instance"])
     )
     client.on_disconnect = on_disconnect
     client.on_connect = on_connect
