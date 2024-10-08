@@ -221,8 +221,8 @@ def on_disconnect(client, userdata, rc):
 
     while connected == 0:
         try:
-            logging.warning("MQTT client: Trying to reconnect")
-            client.connect(config["MQTT"]["broker_address"])
+            logging.warning(f"MQTT client: Trying to reconnect to broker {config['MQTT']['broker_address']} on port {config['MQTT']['broker_port']}")
+            client.connect(host=config["MQTT"]["broker_address"], port=int(config["MQTT"]["broker_port"]))
             connected = 1
         except Exception as err:
             logging.error(f"MQTT client: Error in retrying to connect with broker ({config['MQTT']['broker_address']}:{config['MQTT']['broker_port']}): {err}")
@@ -356,7 +356,7 @@ class DbusMqttSolarChargerService:
         self._dbusservice.add_path("/ProductName", productname)
         self._dbusservice.add_path("/CustomName", customname)
         self._dbusservice.add_path("/FirmwareVersion", 399)
-        self._dbusservice.add_path("/HardwareVersion", "1.0.3 (20240819)")
+        self._dbusservice.add_path("/HardwareVersion", "1.0.4-dev (20241008)")
         self._dbusservice.add_path("/Connected", 1)
 
         self._dbusservice.add_path("/Latency", None)
