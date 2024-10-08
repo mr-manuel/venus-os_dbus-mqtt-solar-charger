@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "./dbus-mqtt-solar-charger/ext/velib_python"
+    ],
+    "[python]": { "editor.formatOnSave": true }
+}

@@ -24,17 +24,11 @@ try:
         config = configparser.ConfigParser()
         config.read(config_file)
         if config["MQTT"]["broker_address"] == "IP_ADDR_OR_FQDN":
-            print(
-                'ERROR:The "config.ini" is using invalid default values like IP_ADDR_OR_FQDN. The driver restarts in 60 seconds.'
-            )
+            print('ERROR:The "config.ini" is using invalid default values like IP_ADDR_OR_FQDN. The driver restarts in 60 seconds.')
             sleep(60)
             sys.exit()
     else:
-        print(
-            'ERROR:The "'
-            + config_file
-            + '" is not found. Did you copy or rename the "config.sample.ini" to "config.ini"? The driver restarts in 60 seconds.'
-        )
+        print('ERROR:The "' + config_file + '" is not found. Did you copy or rename the "config.sample.ini" to "config.ini"? The driver restarts in 60 seconds.')
         sleep(60)
         sys.exit()
 
@@ -42,9 +36,7 @@ except Exception:
     exception_type, exception_object, exception_traceback = sys.exc_info()
     file = exception_traceback.tb_frame.f_code.co_filename
     line = exception_traceback.tb_lineno
-    print(
-        f"Exception occurred: {repr(exception_object)} of type {exception_type} in {file} line #{line}"
-    )
+    print(f"Exception occurred: {repr(exception_object)} of type {exception_type} in {file} line #{line}")
     print("ERROR:The driver restarts in 60 seconds.")
     sleep(60)
     sys.exit()
@@ -173,84 +165,32 @@ if history_days > 0:
         solar_charger_dict.update(
             {
                 # history daily
-                "/History/Daily/"
-                + str(day)
-                + "/Yield": {"value": None, "textformat": _w},
-                "/History/Daily/"
-                + str(day)
-                + "/Consumption": {"value": None, "textformat": _kwh},
-                "/History/Daily/"
-                + str(day)
-                + "/MaxPower": {"value": None, "textformat": _w},
-                "/History/Daily/"
-                + str(day)
-                + "/MaxPvVoltage": {"value": None, "textformat": _v},
-                "/History/Daily/"
-                + str(day)
-                + "/MinBatteryVoltage": {"value": None, "textformat": _v},
-                "/History/Daily/"
-                + str(day)
-                + "/MaxBatteryVoltage": {"value": None, "textformat": _v},
-                "/History/Daily/"
-                + str(day)
-                + "/MaxBatteryCurrent": {"value": None, "textformat": _a},
-                "/History/Daily/"
-                + str(day)
-                + "/TimeInBulk": {"value": None, "textformat": _n},
-                "/History/Daily/"
-                + str(day)
-                + "/TimeInAbsorption": {"value": None, "textformat": _n},
-                "/History/Daily/"
-                + str(day)
-                + "/TimeInFloat": {"value": None, "textformat": _n},
-                "/History/Daily/"
-                + str(day)
-                + "/LastError1": {"value": None, "textformat": _n},
-                "/History/Daily/"
-                + str(day)
-                + "/LastError2": {"value": None, "textformat": _n},
-                "/History/Daily/"
-                + str(day)
-                + "/LastError3": {"value": None, "textformat": _n},
-                "/History/Daily/"
-                + str(day)
-                + "/LastError4": {"value": None, "textformat": _n},
-                "/History/Daily/"
-                + str(day)
-                + "/Pv/0/Yield": {"value": None, "textformat": _kwh},
-                "/History/Daily/"
-                + str(day)
-                + "/Pv/0/MaxPower": {"value": None, "textformat": _w},
-                "/History/Daily/"
-                + str(day)
-                + "/Pv/0/MaxVoltage": {"value": None, "textformat": _v},
-                "/History/Daily/"
-                + str(day)
-                + "/Pv/1/Yield": {"value": None, "textformat": _kwh},
-                "/History/Daily/"
-                + str(day)
-                + "/Pv/1/MaxPower": {"value": None, "textformat": _w},
-                "/History/Daily/"
-                + str(day)
-                + "/Pv/1/MaxVoltage": {"value": None, "textformat": _v},
-                "/History/Daily/"
-                + str(day)
-                + "/Pv/2/Yield": {"value": None, "textformat": _kwh},
-                "/History/Daily/"
-                + str(day)
-                + "/Pv/2/MaxPower": {"value": None, "textformat": _w},
-                "/History/Daily/"
-                + str(day)
-                + "/Pv/2/MaxVoltage": {"value": None, "textformat": _v},
-                "/History/Daily/"
-                + str(day)
-                + "/Pv/3/Yield": {"value": None, "textformat": _kwh},
-                "/History/Daily/"
-                + str(day)
-                + "/Pv/3/MaxPower": {"value": None, "textformat": _w},
-                "/History/Daily/"
-                + str(day)
-                + "/Pv/3/MaxVoltage": {"value": None, "textformat": _v},
+                "/History/Daily/" + str(day) + "/Yield": {"value": None, "textformat": _w},
+                "/History/Daily/" + str(day) + "/Consumption": {"value": None, "textformat": _kwh},
+                "/History/Daily/" + str(day) + "/MaxPower": {"value": None, "textformat": _w},
+                "/History/Daily/" + str(day) + "/MaxPvVoltage": {"value": None, "textformat": _v},
+                "/History/Daily/" + str(day) + "/MinBatteryVoltage": {"value": None, "textformat": _v},
+                "/History/Daily/" + str(day) + "/MaxBatteryVoltage": {"value": None, "textformat": _v},
+                "/History/Daily/" + str(day) + "/MaxBatteryCurrent": {"value": None, "textformat": _a},
+                "/History/Daily/" + str(day) + "/TimeInBulk": {"value": None, "textformat": _n},
+                "/History/Daily/" + str(day) + "/TimeInAbsorption": {"value": None, "textformat": _n},
+                "/History/Daily/" + str(day) + "/TimeInFloat": {"value": None, "textformat": _n},
+                "/History/Daily/" + str(day) + "/LastError1": {"value": None, "textformat": _n},
+                "/History/Daily/" + str(day) + "/LastError2": {"value": None, "textformat": _n},
+                "/History/Daily/" + str(day) + "/LastError3": {"value": None, "textformat": _n},
+                "/History/Daily/" + str(day) + "/LastError4": {"value": None, "textformat": _n},
+                "/History/Daily/" + str(day) + "/Pv/0/Yield": {"value": None, "textformat": _kwh},
+                "/History/Daily/" + str(day) + "/Pv/0/MaxPower": {"value": None, "textformat": _w},
+                "/History/Daily/" + str(day) + "/Pv/0/MaxVoltage": {"value": None, "textformat": _v},
+                "/History/Daily/" + str(day) + "/Pv/1/Yield": {"value": None, "textformat": _kwh},
+                "/History/Daily/" + str(day) + "/Pv/1/MaxPower": {"value": None, "textformat": _w},
+                "/History/Daily/" + str(day) + "/Pv/1/MaxVoltage": {"value": None, "textformat": _v},
+                "/History/Daily/" + str(day) + "/Pv/2/Yield": {"value": None, "textformat": _kwh},
+                "/History/Daily/" + str(day) + "/Pv/2/MaxPower": {"value": None, "textformat": _w},
+                "/History/Daily/" + str(day) + "/Pv/2/MaxVoltage": {"value": None, "textformat": _v},
+                "/History/Daily/" + str(day) + "/Pv/3/Yield": {"value": None, "textformat": _kwh},
+                "/History/Daily/" + str(day) + "/Pv/3/MaxPower": {"value": None, "textformat": _w},
+                "/History/Daily/" + str(day) + "/Pv/3/MaxVoltage": {"value": None, "textformat": _v},
             }
         )
 
@@ -264,18 +204,10 @@ def elaborateData(items, key_root, level=0):
             elaborateData(data_1, key, level=level + 1)
 
         else:
-            if key in solar_charger_dict and (
-                type(data_1) is str or type(data_1) is int or type(data_1) is float
-            ):
+            if key in solar_charger_dict and (type(data_1) is str or type(data_1) is int or type(data_1) is float):
                 solar_charger_dict[key]["value"] = data_1
             else:
-                logging.warning(
-                    'Received key "'
-                    + str(key)
-                    + '" with value "'
-                    + str(data_1)
-                    + '" is not valid'
-                )
+                logging.warning('Received key "' + str(key) + '" with value "' + str(data_1) + '" is not valid')
 
 
 # MQTT requests
@@ -283,9 +215,7 @@ def on_disconnect(client, userdata, rc):
     global connected
     logging.warning("MQTT client: Got disconnected")
     if rc != 0:
-        logging.warning(
-            "MQTT client: Unexpected MQTT disconnection. Will auto-reconnect"
-        )
+        logging.warning("MQTT client: Unexpected MQTT disconnection. Will auto-reconnect")
     else:
         logging.warning("MQTT client: rc value:" + str(rc))
 
@@ -295,9 +225,7 @@ def on_disconnect(client, userdata, rc):
             client.connect(config["MQTT"]["broker_address"])
             connected = 1
         except Exception as err:
-            logging.error(
-                f"MQTT client: Error in retrying to connect with broker ({config['MQTT']['broker_address']}:{config['MQTT']['broker_port']}): {err}"
-            )
+            logging.error(f"MQTT client: Error in retrying to connect with broker ({config['MQTT']['broker_address']}:{config['MQTT']['broker_port']}): {err}")
             logging.error("MQTT client: Retrying in 15 seconds")
             connected = 0
             sleep(15)
@@ -325,12 +253,7 @@ def on_message(client, userdata, msg):
                 last_changed = int(time())
 
                 if (
-                    (
-                        "Pv" in jsonpayload
-                        and "V" in jsonpayload["Pv"]
-                        and "Yield" in jsonpayload
-                        and "Power" in jsonpayload["Yield"]
-                    )
+                    ("Pv" in jsonpayload and "V" in jsonpayload["Pv"] and "Yield" in jsonpayload and "Power" in jsonpayload["Yield"])
                     or (
                         "Pv" in jsonpayload
                         and "0" in jsonpayload["Pv"]
@@ -351,32 +274,16 @@ def on_message(client, userdata, msg):
                     # ------ calculate possible values if missing -----
                     nr_of_trackers = 0
                     yield_power = 0
-                    if (
-                        "Pv" in jsonpayload
-                        and "0" in jsonpayload["Pv"]
-                        and "P" in jsonpayload["Pv"]["0"]
-                    ):
+                    if "Pv" in jsonpayload and "0" in jsonpayload["Pv"] and "P" in jsonpayload["Pv"]["0"]:
                         nr_of_trackers += 1
                         yield_power += jsonpayload["Pv"]["0"]["P"]
-                    if (
-                        "Pv" in jsonpayload
-                        and "1" in jsonpayload["Pv"]
-                        and "P" in jsonpayload["Pv"]["1"]
-                    ):
+                    if "Pv" in jsonpayload and "1" in jsonpayload["Pv"] and "P" in jsonpayload["Pv"]["1"]:
                         nr_of_trackers += 1
                         yield_power += jsonpayload["Pv"]["1"]["P"]
-                    if (
-                        "Pv" in jsonpayload
-                        and "2" in jsonpayload["Pv"]
-                        and "P" in jsonpayload["Pv"]["2"]
-                    ):
+                    if "Pv" in jsonpayload and "2" in jsonpayload["Pv"] and "P" in jsonpayload["Pv"]["2"]:
                         nr_of_trackers += 1
                         yield_power += jsonpayload["Pv"]["2"]["P"]
-                    if (
-                        "Pv" in jsonpayload
-                        and "3" in jsonpayload["Pv"]
-                        and "P" in jsonpayload["Pv"]["3"]
-                    ):
+                    if "Pv" in jsonpayload and "3" in jsonpayload["Pv"] and "P" in jsonpayload["Pv"]["3"]:
                         nr_of_trackers += 1
                         yield_power += jsonpayload["Pv"]["3"]["P"]
 
@@ -387,9 +294,7 @@ def on_message(client, userdata, msg):
                         solar_charger_dict["/NrOfTrackers"]["value"] = 1
 
                     # calculate total power, if multiple trackers set, but total yield power not
-                    if "Yield" not in jsonpayload or (
-                        "Yield" in jsonpayload and "Power" not in jsonpayload["Yield"]
-                    ):
+                    if "Yield" not in jsonpayload or ("Yield" in jsonpayload and "Power" not in jsonpayload["Yield"]):
                         solar_charger_dict["/Yield/Power"]["value"] = yield_power
 
                     # set state, if not set
@@ -400,22 +305,14 @@ def on_message(client, userdata, msg):
                             solar_charger_dict["/State"]["value"] = 0
 
                 else:
-                    logging.warning(
-                        "Received JSON doesn't contain minimum required values"
-                    )
-                    logging.warning(
-                        'Example: {"Pv": { "V": 0.0 }, "Yield": {"Power": 0.0 }, "Dc": { "0": { "Voltage": 0.0, "Current": 0.0 } } }'
-                    )
+                    logging.warning("Received JSON doesn't contain minimum required values")
+                    logging.warning('Example: {"Pv": { "V": 0.0 }, "Yield": {"Power": 0.0 }, "Dc": { "0": { "Voltage": 0.0, "Current": 0.0 } } }')
                     logging.warning("OR")
-                    logging.warning(
-                        'Example: { "Pv": { "0": { "V": 0.0, "P": 0.0 }, "1": { "V": 0.0, "P": 0.0 } }, "Yield": { "Power": 142.4 }, "Dc": { "0": { "Voltage": 0.0, "Current": 0.0 } } }'
-                    )
+                    logging.warning('Example: { "Pv": { "0": { "V": 0.0, "P": 0.0 }, "1": { "V": 0.0, "P": 0.0 } }, "Yield": { "Power": 142.4 }, "Dc": { "0": { "Voltage": 0.0, "Current": 0.0 } } }')
                     logging.debug("MQTT payload: " + str(msg.payload)[1:])
 
             else:
-                logging.warning(
-                    "Received message was empty and therefore it was ignored"
-                )
+                logging.warning("Received message was empty and therefore it was ignored")
                 logging.debug("MQTT payload: " + str(msg.payload)[1:])
 
     except ValueError as e:
@@ -426,9 +323,7 @@ def on_message(client, userdata, msg):
         exception_type, exception_object, exception_traceback = sys.exc_info()
         file = exception_traceback.tb_frame.f_code.co_filename
         line = exception_traceback.tb_lineno
-        logging.error(
-            f"Exception occurred: {repr(exception_object)} of type {exception_type} in {file} line #{line}"
-        )
+        logging.error(f"Exception occurred: {repr(exception_object)} of type {exception_type} in {file} line #{line}")
         logging.debug("MQTT payload: " + str(msg.payload)[1:])
 
 
@@ -491,14 +386,7 @@ class DbusMqttSolarChargerService:
                     self._dbusservice[setting] = data["value"]
 
                 except TypeError as e:
-                    logging.error(
-                        'Received key "'
-                        + setting
-                        + '" with value "'
-                        + str(data["value"])
-                        + '" is not valid: '
-                        + str(e)
-                    )
+                    logging.error('Received key "' + setting + '" with value "' + str(data["value"]) + '" is not valid: ' + str(e))
                     sys.exit()
 
                 except Exception:
@@ -509,9 +397,7 @@ class DbusMqttSolarChargerService:
                     ) = sys.exc_info()
                     file = exception_traceback.tb_frame.f_code.co_filename
                     line = exception_traceback.tb_lineno
-                    logging.error(
-                        f"Exception occurred: {repr(exception_object)} of type {exception_type} in {file} line #{line}"
-                    )
+                    logging.error(f"Exception occurred: {repr(exception_object)} of type {exception_type} in {file} line #{line}")
 
             logging.info(
                 "Solar Charger: {:.2f} W".format(
@@ -523,10 +409,7 @@ class DbusMqttSolarChargerService:
 
         # quit driver if timeout is exceeded
         if timeout != 0 and (now - last_changed) > timeout:
-            logging.error(
-                "Driver stopped. Timeout of %i seconds exceeded, since no new MQTT message was received in this time."
-                % timeout
-            )
+            logging.error("Driver stopped. Timeout of %i seconds exceeded, since no new MQTT message was received in this time." % timeout)
             sys.exit()
 
         # increment UpdateIndex - to show that new data is available
@@ -552,12 +435,7 @@ def main():
     DBusGMainLoop(set_as_default=True)
 
     # MQTT setup
-    client = mqtt.Client(
-        "MqttSolarCharger_"
-        + get_vrm_portal_id()
-        + "_"
-        + str(config["DEFAULT"]["device_instance"])
-    )
+    client = mqtt.Client("MqttSolarCharger_" + get_vrm_portal_id() + "_" + str(config["DEFAULT"]["device_instance"]))
     client.on_disconnect = on_disconnect
     client.on_connect = on_connect
     client.on_message = on_message
@@ -566,46 +444,24 @@ def main():
     if "tls_enabled" in config["MQTT"] and config["MQTT"]["tls_enabled"] == "1":
         logging.info("MQTT client: TLS is enabled")
 
-        if (
-            "tls_path_to_ca" in config["MQTT"]
-            and config["MQTT"]["tls_path_to_ca"] != ""
-        ):
-            logging.info(
-                'MQTT client: TLS: custom ca "%s" used'
-                % config["MQTT"]["tls_path_to_ca"]
-            )
+        if "tls_path_to_ca" in config["MQTT"] and config["MQTT"]["tls_path_to_ca"] != "":
+            logging.info('MQTT client: TLS: custom ca "%s" used' % config["MQTT"]["tls_path_to_ca"])
             client.tls_set(config["MQTT"]["tls_path_to_ca"], tls_version=2)
         else:
             client.tls_set(tls_version=2)
 
         if "tls_insecure" in config["MQTT"] and config["MQTT"]["tls_insecure"] != "":
-            logging.info(
-                "MQTT client: TLS certificate server hostname verification disabled"
-            )
+            logging.info("MQTT client: TLS certificate server hostname verification disabled")
             client.tls_insecure_set(True)
 
     # check if username and password are set
-    if (
-        "username" in config["MQTT"]
-        and "password" in config["MQTT"]
-        and config["MQTT"]["username"] != ""
-        and config["MQTT"]["password"] != ""
-    ):
-        logging.info(
-            'MQTT client: Using username "%s" and password to connect'
-            % config["MQTT"]["username"]
-        )
-        client.username_pw_set(
-            username=config["MQTT"]["username"], password=config["MQTT"]["password"]
-        )
+    if "username" in config["MQTT"] and "password" in config["MQTT"] and config["MQTT"]["username"] != "" and config["MQTT"]["password"] != "":
+        logging.info('MQTT client: Using username "%s" and password to connect' % config["MQTT"]["username"])
+        client.username_pw_set(username=config["MQTT"]["username"], password=config["MQTT"]["password"])
 
     # connect to broker
-    logging.info(
-        f"MQTT client: Connecting to broker {config['MQTT']['broker_address']} on port {config['MQTT']['broker_port']}"
-    )
-    client.connect(
-        host=config["MQTT"]["broker_address"], port=int(config["MQTT"]["broker_port"])
-    )
+    logging.info(f"MQTT client: Connecting to broker {config['MQTT']['broker_address']} on port {config['MQTT']['broker_port']}")
+    client.connect(host=config["MQTT"]["broker_address"], port=int(config["MQTT"]["broker_port"]))
     client.loop_start()
 
     # wait to receive first data, else the JSON is empty and phase setup won't work
@@ -614,16 +470,11 @@ def main():
         if i % 12 != 0 or i == 0:
             logging.info("Waiting 5 seconds for receiving first data...")
         else:
-            logging.warning(
-                "Waiting since %s seconds for receiving first data..." % str(i * 5)
-            )
+            logging.warning("Waiting since %s seconds for receiving first data..." % str(i * 5))
 
         # check if timeout was exceeded
         if timeout != 0 and timeout <= (i * 5):
-            logging.error(
-                "Driver stopped. Timeout of %i seconds exceeded, since no new MQTT message was received in this time."
-                % timeout
-            )
+            logging.error("Driver stopped. Timeout of %i seconds exceeded, since no new MQTT message was received in this time." % timeout)
             sys.exit()
 
         sleep(5)
@@ -635,16 +486,13 @@ def main():
     paths_dbus.update(solar_charger_dict)
 
     DbusMqttSolarChargerService(
-        servicename="com.victronenergy.solarcharger.mqtt_solarcharger_"
-        + str(config["DEFAULT"]["device_instance"]),
+        servicename="com.victronenergy.solarcharger.mqtt_solarcharger_" + str(config["DEFAULT"]["device_instance"]),
         deviceinstance=int(config["DEFAULT"]["device_instance"]),
         customname=config["DEFAULT"]["device_name"],
         paths=paths_dbus,
     )
 
-    logging.info(
-        "Connected to dbus and switching over to GLib.MainLoop() (= event based)"
-    )
+    logging.info("Connected to dbus and switching over to GLib.MainLoop() (= event based)")
     mainloop = GLib.MainLoop()
     mainloop.run()
 
