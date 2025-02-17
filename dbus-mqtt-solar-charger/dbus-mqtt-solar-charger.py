@@ -363,7 +363,7 @@ class DbusMqttSolarChargerService:
         self._dbusservice.add_path("/ProductName", productname)
         self._dbusservice.add_path("/CustomName", customname)
         self._dbusservice.add_path("/FirmwareVersion", 399)
-        self._dbusservice.add_path("/HardwareVersion", "1.0.4 (20250217)")
+        self._dbusservice.add_path("/HardwareVersion", "1.0.5-dev (20250217)")
         self._dbusservice.add_path("/Connected", 1)
 
         self._dbusservice.add_path("/Latency", None)
