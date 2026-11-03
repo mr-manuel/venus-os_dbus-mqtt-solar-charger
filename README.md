@@ -94,6 +94,19 @@ Multiple MPPT tracker (min 2, max 4)
 ```
 </details>
 
+<details><summary>Minimum VRM monitoring</summary>
+
+Add `User`, the cumulative energy in **kWh**, to the existing `Yield` object so VRM can calculate hourly production:
+
+```json
+"Yield": {
+    "Power": 120.0,
+    "User": 1234.56
+}
+```
+
+</details>
+
 <details><summary>Full</summary>
 
 See [dbus](https://github.com/victronenergy/venus/wiki/dbus#solar-chargers) documentation for value description.
