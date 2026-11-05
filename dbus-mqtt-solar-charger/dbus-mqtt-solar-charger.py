@@ -175,6 +175,7 @@ if history_days > 0:
                 "/History/Daily/" + str(day) + "/MinBatteryVoltage": {"value": None, "textformat": _v},
                 "/History/Daily/" + str(day) + "/MaxBatteryVoltage": {"value": None, "textformat": _v},
                 "/History/Daily/" + str(day) + "/MaxBatteryCurrent": {"value": None, "textformat": _a},
+                "/History/Daily/" + str(day) + "/Nr": {"value": None, "textformat": _n},
                 "/History/Daily/" + str(day) + "/TimeInBulk": {"value": None, "textformat": _n},
                 "/History/Daily/" + str(day) + "/TimeInAbsorption": {"value": None, "textformat": _n},
                 "/History/Daily/" + str(day) + "/TimeInFloat": {"value": None, "textformat": _n},
@@ -207,7 +208,7 @@ def elaborateData(items, key_root, level=0):
             elaborateData(data_1, key, level=level + 1)
 
         else:
-            if key in solar_charger_dict and (type(data_1) is str or type(data_1) is int or type(data_1) is float):
+            if key in solar_charger_dict and (type(data_1) is str or type(data_1) is int or type(data_1) is float or type(data_1) is bool or data_1 is None):
                 solar_charger_dict[key]["value"] = data_1
             else:
                 logging.warning('Received key "' + str(key) + '" with value "' + str(data_1) + '" is not valid')
@@ -359,10 +360,15 @@ class DbusMqttSolarChargerService:
 
         # Create the mandatory objects
         self._dbusservice.add_path("/DeviceInstance", deviceinstance)
+        self._dbusservice.add_path("/Devices/0/DeviceInstance", deviceinstance)
         self._dbusservice.add_path("/ProductId", 0xFFFF)
+        self._dbusservice.add_path("/Devices/0/ProductId", 0xFFFF)
         self._dbusservice.add_path("/ProductName", productname)
+        self._dbusservice.add_path("/Devices/0/ProductName", productname)
         self._dbusservice.add_path("/CustomName", customname)
+        self._dbusservice.add_path("/Devices/0/CustomName", customname)
         self._dbusservice.add_path("/FirmwareVersion", 399)
+        self._dbusservice.add_path("/Devices/0/FirmwareVersion", 399)
         self._dbusservice.add_path("/HardwareVersion", "1.0.5-dev (20250217)")
         self._dbusservice.add_path("/Connected", 1)
 

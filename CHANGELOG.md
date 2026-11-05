@@ -1,7 +1,11 @@
 # Changelog
 
 ## v1.0.5-dev
+* Added: `/Devices/0/*` paths (DeviceInstance, ProductId, ProductName, CustomName, FirmwareVersion)
+* Added: `/History/Daily/<day>/Nr` path
+* Changed: Accept boolean and `null` values from MQTT
 * Changed: Fix restart issue
+* Changed: Removed paho-mqtt installation from `install.sh`, since the module is now included in the driver
 
 ## v1.0.4
 ⚠️ This version is required for Venus OS v3.60~27 or later, but it is also compatible with older versions.
